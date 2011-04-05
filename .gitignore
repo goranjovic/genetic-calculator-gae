@@ -1,0 +1,12 @@
+pom.xml
+*jar
+lib
+classes
+*.sh
+.classpath
+.project
+*.swz
+*.swf
+assets
+history
+srcview
