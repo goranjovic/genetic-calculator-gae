@@ -21,6 +21,9 @@ Unary operations are not allowed, i.e. using minus operation to negate a number.
 To see Genetic Calculator on Google App Engine in action:
 http://genetic-calculator.appspot.com/
 
+Or, for the version without flash:
+http://genetic-calculator.appspot.com/noflash
+
 ##Running Locally
 
 ###Prerequisites:
@@ -36,7 +39,9 @@ Google App Engine SDK
  - Checkout genetic-calculator-gae
  - lein deps; lein clean; lein compile
  - PATH_TO_YOUR_GAE_SDK/bin/dev_appserver.sh ./war
- - Open page http://localhost:8080 in your web browser.
+ - Open page http://localhost:8080/noflash in your web browser.
+
+Note: Flash based GUI is not on github repository yet. Only noflash version can be used locally at the time.
 
 ##Project Wiki
 See more info about the project on wiki
