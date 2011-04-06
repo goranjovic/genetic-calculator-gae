@@ -1,17 +1,47 @@
-# gennum
+==Genetic Calculator - GAE Version==
 
-FIXME: write description
+=Introduction=
 
-## Usage
+Genetic Calculator is genetic algorithm implemented in Clojure that finds an equation that uses given numbers and any number of basic mathematical operations to calculate the given result (or a number as close to it as possible).
 
-FIXME: write
+Goal of this project is to illustrate use of genetic algorithms, functional programming, and new programming language Clojure on example of a mathematical game.
 
-## Installation
+=About the game=
 
-FIXME: write
+Objective of the game is to use 6 numbers and any of the basic arithmetic operations (+, -, *, /) to create an equation equal to the given goal value. If such equation does not exist, goal is to find an equation whose value is as close to goal as possible.
 
-## License
+Additional rules:
 
-Copyright (C) 2010 FIXME
+Not all 6 numbers have to be used, omitting is permitted.
+Only integer values are permitted, both in input numbers, and the result (challenged only by division operation)
+Unary operations are not allowed, i.e. using minus operation to negate a number.
+
+=See it in action=
+
+To see Genetic Calculator on Google App Engine in action:
+http://genetic-calculator.appspot.com/
+
+=Running Locally=
+
+Prerequisites:
+
+Any Git client
+Java version 6
+Leiningen
+Google App Engine SDK
+
+Step-by-step install and run instructions:
+
+ - Install prerequisites
+ - Checkout genetic-calculator-gae
+ - lein deps; lein clean; lein compile
+ - PATH_TO_YOUR_GAE_SDK/bin/dev_appserver.sh ./war
+ - Open page http://localhost:8080 in your web browser.
+
+
+
+=License=
+
+Copyright (C) 2010 Goran Jovic, Nevena Vidojevic
 
 Distributed under the Eclipse Public License, the same as Clojure.
