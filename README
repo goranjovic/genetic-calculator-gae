@@ -38,7 +38,9 @@ Google App Engine SDK
  - PATH_TO_YOUR_GAE_SDK/bin/dev_appserver.sh ./war
  - Open page http://localhost:8080 in your web browser.
 
-
+##Project Wiki
+See more info about the project on wiki
+https://github.com/goranjovic/genetic-calculator-gae/wiki
 
 ##License
 
