@@ -11,3 +11,4 @@ assets
 history
 srcview
 appengine-generated
+*.bat

@@ -2,7 +2,8 @@
   (:use [clojure.pprint :only [pprint]]
         [clojure.contrib.json :only [json-str]])
   (:require [appengine-magic.core :as ae]
-            [appengine-magic.services.datastore :as ds]))
+            [appengine-magic.services.datastore :as ds]
+            [appengine-magic.services.mail :as mail]))
 
 (ds/defentity Post [^:key link title author date tags body active commno])
 (ds/defentity Comment [^:key date author body email web number active post])
@@ -14,10 +15,15 @@
 (defn add-comment
   [post-name date author body email web number active]
   (let [post (ds/retrieve Post post-name)
-        d-comment (ds/new* Comment [date author body email web number active post] :parent post)]
+        d-comment (ds/new* Comment [date author body email web number active post] :parent post)
+        info-msg (mail/make-message :from "no-reply@genetic-calculator.appspotmail.com"
+                                    :to ["add@here.com" "and@here.com"]
+                                    :subject "[Genetic Calculator] New comment!"
+                                    :text-body (str "[Comment]\n" author "\n" body))]
     (ds/with-transaction
             (ds/save! (assoc post :commno (inc (:commno post))))
-            (ds/save! d-comment))))
+            (ds/save! d-comment))
+    (mail/send info-msg)))
 
 (defn get-posts
   []
