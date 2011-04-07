@@ -12,9 +12,9 @@ Objective of the game is to use 6 numbers and any of the basic arithmetic operat
 
 ###Additional rules:
 
-Not all 6 numbers have to be used, omitting is permitted.
-Only integer values are permitted, both in input numbers, and the result (challenged only by division operation)
-Unary operations are not allowed, i.e. using minus operation to negate a number.
+ - Not all 6 numbers have to be used, omitting is permitted.
+ - Only integer values are permitted, both in input numbers, and the result (challenged only by division operation)
+ - Unary operations are not allowed, i.e. using minus operation to negate a number.
 
 ##See it in action
 
