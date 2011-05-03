@@ -16,8 +16,8 @@
   [post-name date author body email web number active]
   (let [post (ds/retrieve Post post-name)
         d-comment (ds/new* Comment [date author body email web number active post] :parent post)
-        info-msg (mail/make-message :from "no-reply@genetic-calculator.appspotmail.com"
-                                    :to ["add@here.com" "and@here.com"]
+        info-msg (mail/make-message :from "no-reply@genetic-calculator.appspot.com"
+                                    :to ["nevenavv@gmail.com" "goranjovic@gmail.com"]
                                     :subject "[Genetic Calculator] New comment!"
                                     :text-body (str "[Comment]\n" author "\n" body))]
     (ds/with-transaction
