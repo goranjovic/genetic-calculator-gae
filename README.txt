@@ -4,7 +4,7 @@ Genetic Calculator - GAE Version
 
 Genetic Calculator is genetic algorithm implemented in Clojure that finds an equation that uses given numbers and any number of basic mathematical operations to calculate the given result (or a number as close to it as possible).
 
-Goal of this project is to illustrate use of genetic algorithms, functional programming, and new programming language Clojure on example of a mathematical game.
+Goal of the project is to illustrate use of genetic algorithms, functional programming, and new programming language Clojure on example of a mathematical game.
 
 ##About the game
 
