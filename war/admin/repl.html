@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Genetic Calculator REPL</title>
+		<meta charset="utf-8" />
+		<link href="repl.css" rel="stylesheet" type="text/css" />
+		<script src="https://www.google.com/jsapi?key=ABQIAAAAKCGa0Xad-HrRd1A4fxWizBTwM0brOpm-All5BF6PoaKBxRWWERSgXD7-Uz5UaCWDrZXoI7ZrDWiDCw" type="text/javascript"></script>
+		<script type="text/javascript">
+			google.load("jquery", "1.5.2");
+			google.load("jqueryui", "1.8.12");
+		</script>
+		<script type="text/javascript">
+		
+		function calculate(){
+			$('#result').val("");
+			$('#solve').attr("src", "loading.gif");
+			$.ajax({
+				url: '/admin/repl',
+				type: 'POST',
+				dataType: 'text',
+				data: {source: $('#source').val()},
+				success: function(response){
+					$('#result').val(response);
+					$('#solve').attr("src","play.png");
+				}
+			});
+		}
+
+		</script>
+	</head>
+	<body>
+		<div class="title">
+			<h2>Genetic Calculator REPL</h2>
+		</div>
+		<form >
+			<textarea class="source" id="source" name="source" cols="100" rows="100" spellcheck="false" placeholder="Code goes here"></textarea>
+			<textarea class="result" id="result" name="result" cols="100" rows="4" readonly="readonly" spellcheck="false" placeholder="Solution will appear here"></textarea>
+			<img class="solve" id="solve" src="play.png" alt="Submit Form" onclick="javascript:calculate()"/>
+		</form>
+	</body>
+</html>

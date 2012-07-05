@@ -1,0 +1,62 @@
+
+body{
+}
+
+.title{
+   margin-left:33%;
+}
+
+.source {
+   position:absolute;
+   width:90%;
+   height:60%;
+   font-family: "Droid Sans Mono","Courier New",FreeMono,Courier,monospace;
+   font-size:large;
+   background-color:black;
+   color:white;
+}
+
+.solve {
+   position:absolute;
+   top:74%;
+   left:87%;
+   font-size:large;
+}
+
+.result{
+   position:absolute;
+   width:85%;
+   height:10%;
+   top:73%;
+   font-family: "Droid Sans Mono","Courier New",FreeMono,Courier,monospace;
+   font-size:large;
+   background-color:black;
+   color:white;
+}
+
+#language{
+   position:absolute;
+   top:73%;
+   font-size:large;
+}
+
+#problemPanel{
+   position:absolute;
+   width:22%;
+   height:60%;
+   border: solid 1px;
+}
+
+#problemDescription{
+   background-color:rgba(224,224,224,0.5);
+   border: 1px dotted;
+}
+
+#timeSlot{
+   position:absolute;
+   left:91%;
+   top:84%;
+   font-size:large;
+}
+
+

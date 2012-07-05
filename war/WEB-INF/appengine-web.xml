@@ -2,6 +2,8 @@
   <!-- Replace this with your application id from http://appengine.google.com -->
   <application>genetic-calculator</application>
 
-  <version>3</version>
+  <version>5</version>
+
+  <threadsafe>true</threadsafe>
 
 </appengine-web-app>

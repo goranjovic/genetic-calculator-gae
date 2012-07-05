@@ -7,8 +7,10 @@ classes
 .project
 *.swz
 *.swf
+*.swp
 assets
 history
 srcview
 appengine-generated
 *.bat
+.lein-deps-sum

@@ -15,7 +15,7 @@
 (:use hiccup.page-helpers)
 (:use hiccup.form-helpers)
 (:use clojure.contrib.java-utils)
-;(:use [ring.adapter.jetty :only [run-jetty] :as jetty])
+(:use [clojure.stacktrace :only [print-stack-trace]])
 (:use [ring.middleware params keyword-params nested-params])
 (:use [ring.util.response :only [redirect]])
 (:use [clojure.contrib.duck-streams :exclude [spit]]) 
@@ -130,8 +130,14 @@
 (defn service-output [params]
   (apply str (interpose ";" (result params))))
 
+(defn web-repl [source]
+  (try (str (load-string (str "(in-ns 'gennum.web)" source)))
+  (catch Exception e
+   (with-out-str (print-stack-trace e)))))
+
 (defroutes webservice
   (GET "/service" {params :params} (service-output params))
+  (POST "/admin/repl" [source] (web-repl source))
   (GET "/noflash" {params :params} (sum-form params nil)) 
   (POST "/noflash" {params :params}
     ;(println params)
